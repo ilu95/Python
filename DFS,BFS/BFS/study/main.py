@@ -28,6 +28,7 @@ graph = [
     [1, 7]
 ]
 
-visited = [False] * 9
+visited = [False] * len(graph)
+
 
 bfs(graph, 1, visited)
