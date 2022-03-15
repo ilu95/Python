@@ -25,17 +25,23 @@ res = []
 
 
 def check(x, y):
-    count = 0
+    count_b = 0
+    count_w = 0
     start_x = x
     start_y = y
     for i in range(x, x+8):
         for j in range(y, y+8):
-            if graph[start_x+7][start_y+7] == "B":
+            if graph[start_x][start_y] == "B":
                 if graph[i][j] != B_board[i-x][j-y]:
-                    count += 1
-            if graph[start_x+7][start_y+7] == "W":
+                    count_b += 1
                 if graph[i][j] != W_board[i-x][j-y]:
-                    count += 1
+                    count_w += 1
+            if graph[start_x][start_y] == "W":
+                if graph[i][j] != B_board[i-x][j-y]:
+                    count_b += 1
+                if graph[i][j] != W_board[i-x][j-y]:
+                    count_w += 1
+    count = min(count_b, count_w)
     res.append(count)
 
 
