@@ -1,4 +1,7 @@
 from sys import stdin
+from collections import deque
+# deque 써서 하는걸로 변경 - 시간복잡도에서 효율적임
+
 
 case = int(input())
 
